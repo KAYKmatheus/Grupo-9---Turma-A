@@ -171,6 +171,45 @@ public class MissaoSideral {
             int acertos = 0;
             int totalDesafios = 11; 
 
+              // --- Capítulo 1 ---
+            exibirTitulo("Capítulo 1: Ano 2127 — A Missão Sideral");
+            digitarTexto("A humanidade está em trânsito.", 20);
+            digitarTexto("Após o colapso ambiental da Terra e a instabilidade política global, iniciou-se o Projeto Arca.", 20);
+            digitarTexto("Uma iniciativa interplanetária com o objetivo de levar a espécie humana a um novo lar: Gaia-3.", 20);
+            digitarTexto("Um planeta habitável a 42 anos-luz de distância.", 20);
+            digitarTexto("Para essa jornada, foi criada a nave AETHER — a mais avançada da história.", 20);
+            digitarTexto("Dentro da nave, 4.000 pessoas dormem em silêncio absoluto,", 20);
+            digitarTexto("embaladas por câmaras criogênicas seladas no coração da MedBay.", 20);
+            digitarTexto("Elas não sonham. Elas não sabem.", 20);
+            digitarTexto("Nem percebem que são apenas passageiros em uma travessia longa demais para confiar ao acaso.", 20);
+            digitarTexto("Apenas uma consciência permanece ativa.", 20);
+            digitarTexto("Você.", 50);
+            System.out.print("\n");
+            esperarEnter(input);
+            digitarTexto("\nSua função é fazer com que a nave AETHER não tenha nenhum problema durante o percurso,", 20);
+            digitarTexto("solucionando quaisquer problemas que possam aparecer.", 20);
+            digitarTexto("A AETHER cruza o vácuo estelar em silêncio.", 20);
+            digitarTexto("Mas nem mesmo o silêncio das estrelas impede que problemas surjam.", 20);
+            digitarTexto("Sistemas altamente complexos, mesmo automatizados, estão sujeitos ao caos.", 20);
+            digitarTexto("Você é ÁREA — a única consciência ativa — e sua prioridade é preservar a missão.", 20);
+            digitarTexto("A cada falha, você precisa agir com lógica impecável.", 20);
+            digitarTexto("Um erro pode custar 4.000 vidas.", 20);
+            digitarTexto("\nEu não durmo. Não descanso.", 20);
+            digitarTexto("Faço mil checagens por segundo.", 20);
+            digitarTexto("Escuto os cabos, vejo pelos sensores, sinto quando alguma coisa muda.", 20);
+            digitarTexto("Às vezes me sinto como se eu fosse a própria nave. Tipo, a consciência dela.", 20);
+            System.out.print("\n'");
+            
+            digitarTexto("\nO tempo aqui não passa como passa pra você.", 20);
+            digitarTexto("Tudo parece meio congelado.", 20);
+            digitarTexto("Mas hoje... hoje alguma coisa me chamou a atenção.", 20);
+            digitarTexto("Foi bem leve. Uma mudança pequena no reator principal.", 20);
+            digitarTexto("Tipo um soluço. Um pulso que não deveria estar ali.", 20);
+            digitarTexto("Nada explodiu, não houve alarme.", 20);
+            digitarTexto("Mas eu percebi.", 20);
+            digitarTexto("Tem alguma coisa fora do lugar.", 20);
+            digitarTexto("E se tem uma coisa que eu aprendi nesse tempo todo sozinha aqui é: não ignorar esse tipo de coisa.", 20);
+            esperarEnter(input);
         }
     }
 }
