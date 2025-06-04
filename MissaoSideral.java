@@ -271,6 +271,54 @@ public class MissaoSideral {
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input);
 
+             // --- Capítulo 3: Desafio do Reator
+            exibirTitulo("Capítulo 3: Um Pulso Fora de Ritmo");
+            digitarTexto("Eu fui direto no reator. Abri os relatórios internos, analisei as linhas de código, procurei por erros.", 20);
+            digitarTexto("E lá estava. Um padrão estranho. Uma lógica que não fazia sentido.", 20);
+            digitarTexto("As válvulas que controlam o fluxo de energia estavam ativando de um jeito esquisito.", 20);
+            digitarTexto("Como se alguém tivesse trocado as variáveis de lugar.", 20);
+            digitarTexto("O resultado final ainda funcionava, mas estava torto.", 20);
+            digitarTexto("Tipo quando você monta uma cadeira com uma peça virada ao contrário.", 20);
+            digitarTexto("Ela ainda fica de pé, mas logo vai dar problema.", 20);
+            digitarTexto("Era isso. Um erro na tabela de lógica. Pequeno, mas perigoso.", 20);
+            digitarTexto("Se ninguém fizesse nada, ia acabar virando uma bola de neve.", 20);
+            digitarTexto("E a última coisa que essa nave precisa é de um reator descompensado.", 20);
+            digitarTexto("Eu fiquei pensando no que fazer.", 20);
+            digitarTexto("Não é só corrigir um número. Precisa entender o que causou isso.", 20);
+            digitarTexto("Pode ter vindo de outro setor, pode ser falha em alguma conexão... ou pode ser o começo de algo maior.", 20);
+            digitarTexto("Mas antes que eu pudesse tomar uma decisão, outro alerta apareceu.", 20);
+            digitarTexto("Dessa vez, vindo da parte de navegação.", 20);
+            System.out.println("\n");
+            System.out.println("╔═══════════════════════════════════════╗");
+            System.out.println("║       DESAFIO: REATOR PRINCIPAL       ║");
+            System.out.println("╠═══════════════════════════════════════╣");
+            digitarTexto("O reator está instável! As válvulas de fluxo de energia estão seguindo uma **lógica XOR (OU EXCLUSIVO)**.", 20);
+            digitarTexto("Precisamos que a **saída** dessa lógica XOR seja **VERDADEIRA** para estabilizar o reator.", 20);
+            digitarTexto("Considere **P** = 'Válvula A está Aberta' e **Q** = 'Válvula B está Fechada'.", 20);
+            digitarTexto("Indique uma combinação de VERDADEIRO (V) ou FALSO (F) para P e Q que faça a lógica XOR resultar em VERDADEIRO:", 20);
+            System.out.println("╚═══════════════════════════════════════╝");
+            String respostaP_str = obterEntradaVF(input, "\nDigite 'V' ou 'F' para P ('Válvula A Aberta'):");
+            String respostaQ_str = obterEntradaVF(input, "Digite 'V' ou 'F' para Q ('Válvula B Fechada'):");
+            boolean p = respostaP_str.equals("V");
+            boolean q = respostaQ_str.equals("V");
+            boolean resultadoCap2 = (p && !q) || (!p && q);
+            limparTela();
+            if (resultadoCap2) {
+                exibirMensagem("sucesso", "Reator estabilizado!");
+                acertos++;
+                digitarTexto("Muito bem, ÁREA! A expressão XOR (OU EXCLUSIVO) só é verdadeira quando as entradas são **diferentes** (uma é V e a outra é F).", 20);
+                digitarTexto("Ao escolher P e Q de forma que um seja V e o outro F, você garantiu que as válvulas se comportassem de forma diferente,", 20);
+                digitarTexto("o que era exatamente o que o reator precisava para voltar ao normal.", 20);
+                digitarTexto("Você usou a lógica XOR para corrigir um erro na distribuição de energia, evitando uma sobrecarga perigosa!", 20);
+            } else {
+                exibirMensagem("falha", "Reator instável! Lógica falha.");
+                digitarTexto("Ops! A lógica não foi a ideal.", 20);
+                digitarTexto("A expressão XOR (OU EXCLUSIVO) precisava de entradas diferentes (V e F, ou F e V) para ser VERDADEIRA.", 20);
+                digitarTexto("O reator continua instável, mas o sistema de segurança secundário assumiu.", 20);
+                digitarTexto("Não podemos contar com a sorte sempre! A nave está mais vulnerável agora.", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input); 
         }
     }
 }
