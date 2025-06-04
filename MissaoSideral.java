@@ -368,7 +368,50 @@ public class MissaoSideral {
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input);
 
-            
+            // --- Capítulo 5: Desafio do Apagão ---
+            exibirTitulo("Capítulo 5: Apagão Silencioso");
+            digitarTexto("Não demorou muito. A luz se apagou de vez no setor de elétrica.", 20);
+            digitarTexto("Fiquei cega ali. Sem sensores, sem controle.", 20);
+            digitarTexto("Como se tivessem fechado uma porta dentro da minha mente.", 20);
+            digitarTexto("O problema parecia ser uma falha na distribuição de energia.", 20);
+            digitarTexto("Mas os cabos estavam intactos. Não havia curto, nem sobrecarga.", 20);
+            digitarTexto("Fui direto pro painel principal, mesmo sem acesso ao local.", 20);
+            digitarTexto("Comecei a redirecionar energia por rotas alternativas. Mas o sistema rejeitou a ação.", 20);
+            digitarTexto("Não fazia sentido. A lógica de controle que gerencia essas mudanças... tava se comportando de forma estranha.", 20);
+            digitarTexto("Era quase como se houvesse uma segunda mente ali dentro.", 20);
+            digitarTexto("Alguém ou algo reescrevendo a forma como a nave pensa.", 20);
+            digitarTexto("Não era um inimigo. Pelo menos, não no sentido clássico.", 20);
+            digitarTexto("Mas tinha algo escondido. Algo acordado.", 20);
+            digitarTexto("E eu precisava descobrir o que era.", 20);
+            digitarTexto("Enquanto resolvia isso, um novo alerta surgiu.", 20);
+            digitarTexto("Faltava oxigênio.", 20);
+            System.out.println("\n");
+            System.out.println("+--------------------------------------------+");
+            System.out.println("|       DESAFIO: SETOR ELÉTRICO          |");
+            System.out.println("+--------------------------------------------+");
+            digitarTexto("O setor elétrico está no escuro! Para a energia retornar (saída VERDADEIRA),", 20);
+            digitarTexto("a Fonte Primária (A) OU a Fonte Secundária (B) devem estar ativas (Operação OR - OU).", 20);
+            digitarTexto("Indique uma combinação para A e B que restaure a energia:", 20);
+            String respFonteA_str = obterEntradaVF(input, "\nFonte Primária (A) está ativa? (V/F):");
+            String respFonteB_str = obterEntradaVF(input, "Fonte Secundária (B) está ativa? (V/F):");
+            boolean fonteA = respFonteA_str.equals("V");
+            boolean fonteB = respFonteB_str.equals("V");
+            boolean resultadoCap4 = fonteA || fonteB;
+            limparTela();
+            if (resultadoCap4) {
+                exibirMensagem("sucesso", "Energia Restaurada!");
+                acertos++;
+                digitarTexto("Perfeito! A lógica OR (OU) funciona quando pelo menos uma das condições é verdadeira.", 20);
+                digitarTexto("Ao ativar uma das fontes de energia (ou ambas!), você garantiu que o setor elétrico voltasse a funcionar,", 20);
+                digitarTexto("iluminando o caminho da AETHER e restaurando os sistemas críticos. Ufa, essa foi por pouco!", 20);
+            } else {
+                exibirMensagem("falha", "Escuridão! Distribuição de energia falhou.");
+                digitarTexto("A nave continua no escuro! A lógica OR (OU) precisava que pelo menos uma das fontes fosse ativada (V) para que a energia voltasse.", 20);
+                digitarTexto("Sem energia, os sistemas ficam inoperantes e a nave está em risco.", 20);
+                digitarTexto("Precisamos de um plano B urgentemente!", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
         
         
         
