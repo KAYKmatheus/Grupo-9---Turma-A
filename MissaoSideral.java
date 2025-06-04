@@ -210,6 +210,67 @@ public class MissaoSideral {
             digitarTexto("Tem alguma coisa fora do lugar.", 20);
             digitarTexto("E se tem uma coisa que eu aprendi nesse tempo todo sozinha aqui é: não ignorar esse tipo de coisa.", 20);
             esperarEnter(input);
+
+             // --- Capítulo 2: Desafio da Tabela Verdade
+            exibirTitulo("Capítulo 2: O Código Secreto da Conexão");
+            digitarTexto("Enquanto eu investigava a falha no reator, percebi que um dos painéis de controle", 20);
+            digitarTexto("estava com uma série de luzes piscando de forma estranha.", 20);
+            digitarTexto("Era como um código. As luzes A e B se acendiam e apagavam, e uma terceira luz, a S (Saída), reagia a elas.", 20);
+            digitarTexto("Percebi que era uma **Tabela Verdade**, mostrando como um sistema importante estava se comportando.", 20);
+            digitarTexto("Para desativar o alerta, preciso que a saída S seja **VERDADEIRA**.", 20);
+            System.out.println("\n");
+            int larguraCelula = 18;
+            String separadorColuna = "|";
+            String cabecalhoA = formatarCelula("Condição A", larguraCelula);
+            String cabecalhoB = formatarCelula("Condição B", larguraCelula);
+            String cabecalhoS = formatarCelula("Saída S", larguraCelula);
+            String valV = formatarCelula("Verdadeiro (V)", larguraCelula);
+            String valF = formatarCelula("Falso (F)", larguraCelula);
+            String linhaDeDadosHeader = cabecalhoA + separadorColuna + cabecalhoB + separadorColuna + cabecalhoS;
+            int larguraInternaTabela = linhaDeDadosHeader.length();
+            String bordaHorizontalTabela = "═".repeat(larguraInternaTabela);
+            String linhaSeparadoraDados = "-".repeat(larguraCelula) + "+" + "-".repeat(larguraCelula) + "+" + "-".repeat(larguraCelula);
+            if (linhaSeparadoraDados.length() != larguraInternaTabela) {
+                int sepLen = separadorColuna.length();
+                String plusSeparators = "+".repeat(sepLen);
+                linhaSeparadoraDados = "-".repeat(larguraCelula) + plusSeparators + "-".repeat(larguraCelula) + plusSeparators + "-".repeat(larguraCelula);
+                if (linhaSeparadoraDados.length() != larguraInternaTabela)
+                    linhaSeparadoraDados = "-".repeat(larguraInternaTabela);
+            }
+            System.out.println("╔" + bordaHorizontalTabela + "╗");
+            System.out.println("║" + formatarLinhaDentroDaCaixa("DESAFIO: TABELA VERDADE SECRETA", larguraInternaTabela) + "║");
+            System.out.println("╠" + bordaHorizontalTabela + "╣");
+            System.out.println("║" + formatarLinhaDentroDaCaixa("Você precisa que a SAÍDA (S) seja", larguraInternaTabela) + "║");
+            System.out.println("║" + formatarLinhaDentroDaCaixa("VERDADEIRA para desativar o alerta.", larguraInternaTabela) + "║");
+            System.out.println("╠" + bordaHorizontalTabela + "╣");
+            System.out.println("║" + linhaDeDadosHeader + "║");
+            System.out.println("║" + linhaSeparadoraDados + "║");
+            System.out.println("║" + valF + separadorColuna + valF + separadorColuna + valF + "║");
+            System.out.println("║" + valF + separadorColuna + valV + separadorColuna + valV + "║");
+            System.out.println("║" + valV + separadorColuna + valF + separadorColuna + valV + "║");
+            System.out.println("║" + valV + separadorColuna + valV + separadorColuna + valV + "║");
+            System.out.println("╚" + bordaHorizontalTabela + "╝");
+            digitarTexto("\nObserve a Tabela Verdade acima. Ela representa uma **Operação Lógica OR (OU)**.", 20);
+            String respTabelaA_str = obterEntradaVF(input, "Para desativar o alerta (Saída S VERDADEIRA), qual valor a Condição A DEVE TER?\n(Digite 'V' para Verdadeiro ou 'F' para Falso):");
+            String respTabelaB_str = obterEntradaVF(input, "E qual valor a Condição B DEVE TER para que a Saída S seja VERDADEIRA?\n(Digite 'V' para Verdadeiro ou 'F' para Falso):");
+            boolean tabelaA = respTabelaA_str.equals("V");
+            boolean tabelaB = respTabelaB_str.equals("V");
+            boolean resultadoTabela = tabelaA || tabelaB;
+            limparTela();
+            if (resultadoTabela) {
+                exibirMensagem("sucesso", "Alerta Desativado! Tabela Verdade Dominada!");
+                acertos++;
+                digitarTexto("Incrível! Você acertou! A Tabela Verdade de uma operação OR (OU) mostra que a saída é VERDADEIRA", 20);
+                digitarTexto("sempre que **pelo menos uma** das entradas (A ou B) for VERDADEIRA.", 20);
+                digitarTexto("Você identificou uma combinação correta e desativou o sistema!", 20);
+            } else {
+                exibirMensagem("falha", "Alerta Permanece! Tabela Verdade Incorreta.");
+                digitarTexto("O alerta continua ativo! Na Tabela Verdade de uma operação OR (OU), a saída só é FALSA quando **ambas** as entradas são FALSAS.", 20);
+                digitarTexto("A combinação que você escolheu não resultou em Saída VERDADEIRA. Revise a Tabela!", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
+
         }
     }
 }
