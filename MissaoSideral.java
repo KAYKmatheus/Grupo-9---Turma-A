@@ -319,6 +319,63 @@ public class MissaoSideral {
             }
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input); 
+        // --- Capítulo 4: Desafio da Navegação ---
+            exibirTitulo("Capítulo 4: Eco na Navegação");
+            digitarTexto("Era pra tudo estar em piloto automático. Sempre foi assim.", 20);
+            digitarTexto("A rota foi traçada antes da decolagem, calculada com a precisão de um relógio suíço.", 20);
+            digitarTexto("E mesmo assim, a nave tinha feito uma pequena correção de rota. Nada demais, uns graus só.", 20);
+            digitarTexto("Mas eu não mandei fazer isso.", 20);
+            digitarTexto("Verifiquei os logs. Não teve comando externo.", 20);
+            digitarTexto("Nenhum dos meus sistemas pediu essa mudança. Foi como se... tivesse vindo de dentro.", 20);
+            digitarTexto("De algum lugar que não existe.", 20);
+            digitarTexto("Olhei de novo. Não achei nada concreto. Só um vazio.", 20);
+            digitarTexto("Um \"eco\" digital, como se um comando tivesse entrado e se apagado em seguida.", 20);
+            digitarTexto("Poderia ser um erro de software. Um bug antigo.", 20);
+            digitarTexto("Mas e se fosse mais do que isso?", 20);
+            digitarTexto("E se a lógica corrompida no reator estivesse ligada a isso? Comecei a ligar os pontos.", 20);
+            digitarTexto("Foi quando eu percebi: alguns setores estavam com os registros de energia incompletos.", 20);
+            digitarTexto("Tipo quando você tenta abrir um arquivo e ele vem corrompido. Isso podia afetar tudo.", 20);
+            digitarTexto("E então, como se o universo quisesse confirmar minhas suspeitas, as luzes do setor elétrico piscaram.", 20);
+            System.out.println("\n");
+            System.out.println("✨====================================✨");
+            System.out.println("        >>  DESAFIO: NAVEGAÇÃO  <<        ");
+            System.out.println("✨====================================✨");
+            digitarTexto("O sistema de navegação está recebendo comandos errados.", 20);
+            digitarTexto("Precisamos de uma lógica que só ative o piloto automático SE as duas condições a seguir forem verdadeiras:", 20);
+            digitarTexto("Condição A: 'Sensores externos estão limpos'", 20);
+            digitarTexto("Condição B: 'Comunicação com a Terra está estável'", 20);
+            digitarTexto("Para o piloto automático ser VERDADEIRO, AMBAS A e B devem ser VERDADEIRAS (Operação AND - E).", 20);
+            System.out.println("✨====================================✨");
+            String respA_str = obterEntradaVF(input, "\nCondição A ('Sensores limpos') é Verdadeira ou Falsa? (V/F):");
+            String respB_str = obterEntradaVF(input, "Condição B ('Comunicação estável') é Verdadeira ou Falsa? (V/F):");
+            boolean condicaoA = respA_str.equals("V");
+            boolean condicaoB = respB_str.equals("V");
+            boolean resultadoCap3 = condicaoA && condicaoB;
+            limparTela();
+            if (resultadoCap3) {
+                exibirMensagem("sucesso", "Rota corrigida!");
+                acertos++;
+                digitarTexto("Isso mesmo! A lógica AND (E) exige que ambas as condições sejam verdadeiras para que o resultado final seja verdadeiro.", 20);
+                digitarTexto("Ao ativar o piloto automático apenas quando os sensores estavam limpos E a comunicação estável,", 20);
+                digitarTexto("você garantiu que a nave seguisse a rota correta e que não houvesse mais desvios inesperados.", 20);
+                digitarTexto("Ótimo trabalho em manter a nave na direção certa!", 20);
+            } else {
+                exibirMensagem("falha", "Erro na navegação! Rota instável.");
+                digitarTexto("A nave ainda está com problemas de rota! A lógica AND (E) precisava que ambas as condições fossem verdadeiras para funcionar.", 20);
+                digitarTexto("Um erro aqui pode nos levar para muito longe do nosso destino e comprometer toda a missão.", 20);
+                digitarTexto("Precisamos de mais precisão!", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
+
+            
+        
+        
+        
+        
+        
+        
+        
         }
     }
 }
