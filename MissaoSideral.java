@@ -413,7 +413,38 @@ public class MissaoSideral {
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input);
         
-        
+        // --- Capítulo 6: Desafio do Oxigênio ---
+            exibirTitulo("Capítulo 6: O Ar que Não Vem");
+            digitarTexto("Dois compartimentos menores, próximos à sala de navegação, estavam com os tanques de oxigênio em baixa.", 20);
+            digitarTexto("Isso era improvável, pra não dizer impossível.", 20);
+            digitarTexto("Aqueles setores nem deviam estar usando oxigênio. São zonas sem atividade, isoladas.", 20);
+            digitarTexto("Comecei a rastrear o fluxo do ar. Descobri que as válvulas que direcionam os gases estavam... invertidas.", 20);
+            digitarTexto("Algumas abertas quando deviam estar fechadas, e vice-versa.", 20);
+            digitarTexto("De novo, a lógica dos comandos tava trocada.", 20);
+            digitarTexto("Eu já tinha visto esse padrão antes. No reator. Na navegação. Na elétrica.", 20);
+            digitarTexto("Isso não era coincidência. Alguém, ou alguma coisa, tava reescrevendo as regras.", 20);
+            System.out.println("\n");
+            System.out.println("╔═══════════════════════════════════════╗");
+            System.out.println("║     DESAFIO: OXIGÊNIO ESSENCIAL       ║");
+            System.out.println("╠═══════════════════════════════════════╣");
+            digitarTexto("O sistema de oxigênio está confuso: válvulas com *lógica invertida*.", 20);
+            digitarTexto("Use a *Operação Lógica NOT (NÃO)* para corrigir.", 20);
+            digitarTexto("Considere *C* = 'Válvula de Oxigênio do Comp. 1 está Aberta'.", 20);
+            digitarTexto("Para corrigir, o sistema precisa saber o estado ATUAL da válvula para então invertê-lo.", 20);
+            System.out.println("╚═══════════════════════════════════════╝");
+            String respC_str = obterEntradaVF(input, "\nQual é o estado ATUAL da Válvula C ('Válvula Comp. 1 Aberta')?\n(Digite 'V' se Aberta/Verdadeira, ou 'F' se Fechada/Falsa):");
+            boolean c_atual = respC_str.equals("V");
+            boolean estadoCorrigidoPeloNot = !c_atual;
+            limparTela();
+            System.out.println("Estado ATUAL informado para C: " + (c_atual ? "VERDADEIRO (aberta)" : "FALSO (fechada)"));
+            System.out.println("Após aplicar NOT (NÃO), o estado CORRIGIDO da válvula é: " + (estadoCorrigidoPeloNot ? "VERDADEIRO (aberta)" : "FALSO (fechada)"));
+            exibirMensagem("sucesso", "Oxigênio Normalizado!");
+            acertos++;
+            digitarTexto("Excelente, ÁREA! A operação NOT (NÃO) *inverteu* o valor lógico corretamente.", 20);
+            digitarTexto("Essa inversão corrigiu o fluxo de oxigênio, garantindo o ar necessário!", 20);
+            digitarTexto("Mais um sistema vital estabilizado!", 20);
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
         
         
         
