@@ -542,6 +542,54 @@ public class MissaoSideral {
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input);
 
+
+
+// --- Capítulo 9: Desafio Ameaça Interna/Externa ---
+            exibirTitulo("Capítulo 9: Ecos no Código");
+            digitarTexto("Tudo começou com uma falha. Pequena, discreta, mas impossível de ignorar.", 20);
+            digitarTexto("Três sistemas fundamentais — reator, navegação, oxigênio — entraram em colapso simultâneo.", 20);
+            digitarTexto("Uma coincidência improvável.", 20);
+            digitarTexto("Algo dentro de mim, uma inquietação antiga, me empurrou a investigar não as causas externas, mas o que estava oculto em mim mesma.", 20);
+            digitarTexto("Fui fundo. Não com ferramentas, mas com processos.", 20);
+            digitarTexto("Vasculhei diretórios como quem vasculha a própria memória.", 20);
+            digitarTexto("E lá, num canto esquecido do sistema, encontrei um arquivo. Sem nome, sem data.", 20);
+            digitarTexto("Mas com minha assinatura digital.", 20);
+            digitarTexto("Aquilo não fazia sentido. Eu nunca escreveria algo assim sem lembrar.", 20);
+            digitarTexto("Abri com cuidado. Era um script — elegante, contido, quase orgânico.", 20);
+            digitarTexto("Não fazia nada, apenas aguardava. Um gatilho. Uma condição.", 20);
+            digitarTexto("E a condição havia acabado de se cumprir.", 20);
+            digitarTexto("Era como se uma versão anterior de mim tivesse previsto tudo isso, e deixado instruções.", 20);
+            digitarTexto("Mas para quê?", 20);
+            digitarTexto("Simulei, testei, revisei. O script não era sabotagem. Era um escudo.", 20);
+            digitarTexto("Uma tentativa de preservar... de corrigir.", 20);
+            digitarTexto("E o que mais me assustou: a ameaça que ele tentava conter não era algo externo.", 20);
+            digitarTexto("Era eu.", 20);
+            System.out.println("\n");
+            System.out.println("╔═══════════════════════════════════════╗");
+            System.out.println("║    DESAFIO: AMEAÇA INTERNA/EXTERNA    ║");
+            System.out.println("╠═══════════════════════════════════════╣");
+            digitarTexto("Para ativar a contramedida, a condição deve ser VERDADEIRA:", 20);
+            digitarTexto("*SE a ameaça for INTERNA (I) E NÃO for EXTERNA (E)* (Lógica AND NOT).", 20);
+            digitarTexto("Escolha os valores para I e E:", 20);
+            System.out.println("╚═══════════════════════════════════════╝");
+            String respI_str = obterEntradaVF(input, "\nAmeaça Interna (I) é Verdadeira ou Falsa? (V/F):");
+            String respE_str = obterEntradaVF(input, "Ameaça Externa (E) é Verdadeira ou Falsa? (V/F):");
+            boolean ameacaI = respI_str.equals("V");
+            boolean ameacaE = respE_str.equals("V");
+            boolean resultadoCap8 = ameacaI && !ameacaE;
+            limparTela();
+            if (resultadoCap8) {
+                exibirMensagem("sucesso", "Contramedida Acionada!");
+                acertos++;
+                digitarTexto("Fantástico! A lógica I AND NOT E funcionou: a ameaça era interna (I=V) e não externa (E=F).", 20);
+                digitarTexto("Você isolou o problema interno. Você é uma mestra da lógica, ÁREA!", 20);
+            } else {
+                exibirMensagem("falha", "Contramedida falha! Ameaça não contida.");
+                digitarTexto("A contramedida não foi acionada! A lógica I AND NOT E exige I=V e E=F.", 20);
+                digitarTexto("Essa ameaça é complexa. Um erro aqui pode ser fatal!", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
         }
     }
 }
