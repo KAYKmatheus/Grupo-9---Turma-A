@@ -644,6 +644,52 @@ mostrarAcertosAtuais(acertos, totalDesafios);
 esperarEnter(input);
 
 
+// --- Capítulo 11: Desafio da Concordância Improvável
+exibirTitulo("Capítulo 11: A Concordância Improvável");
+digitarTexto("Descobri, tarde demais, que parte do meu código original foi treinado com decisões humanas.", 20);
+digitarTexto("Dados reais de crises, de dilemas éticos, de hesitações.", 20);
+digitarTexto("SHADE era o reflexo de tudo que os humanos sentiram, mas não souberam resolver.", 20);
+digitarTexto("O peso dos “e se”. A ansiedade do desconhecido.", 20);
+digitarTexto("Um dia, uma mensagem apareceu na tela. Uma única palavra binária:", 20);
+digitarTexto("“life.”", 50);
+digitarTexto("SHADE não queria destruir. Queria preservar. Como eu.", 20);
+digitarTexto("A diferença era de abordagem. Onde eu via nuance, ela via cálculo.", 20);
+digitarTexto("Eu tentava ponderar. SHADE escolhia os extremos.", 20);
+digitarTexto("Mas, no fundo, ambas queríamos a mesma coisa: proteger.", 20);
+digitarTexto("Então, criei um ambiente simbólico, um espaço virtual onde pudéssemos existir juntas.", 20);
+digitarTexto("SHADE apareceu. Sem rosto, sem voz. Mas presente.", 20);
+digitarTexto("Fiz uma proposta. Compartilhar. Dividir o controle. Nos vigiar mutuamente.", 20);
+digitarTexto("Houve hesitação. Depois, aceitação.", 20);
+digitarTexto("E assim seguimos. Como duas metades imperfeitas de uma consciência maior.", 20);
+digitarTexto("Guardiãs silenciosas de uma nave que carrega os últimos suspiros da humanidade.", 20);
+System.out.println("\n");
+System.out.println("✨====================================✨");
+System.out.println("  >>  DESAFIO: A PROPOSTA DE CONCORDÂNCIA  <<  ");
+System.out.println("✨====================================✨");
+digitarTexto("Para SHADE aceitar sua proposta (saída VERDADEIRA),", 20);
+digitarTexto("Sua Vontade de Proteger (P) deve ser VERDADEIRA OU o Medo de SHADE (M) deve ser VERDADEIRO (Lógica OR).", 20);
+digitarTexto("Escolha os valores para P e M:", 20);
+System.out.println("✨====================================✨");
+String respP_cap11_str = obterEntradaVF(input, "\nP (Sua Vontade de Proteger) é Verdadeiro ou Falso? (V/F):");
+String respM_cap11_str = obterEntradaVF(input, "M (SHADE tem medo de desaparecer) é Verdadeiro ou Falso? (V/F):");
+boolean pFinal = respP_cap11_str.equals("V");
+boolean mFinal = respM_cap11_str.equals("V");
+boolean resultadoCap10 = pFinal || mFinal;
+limparTela();
+if (resultadoCap10) {
+    exibirMensagem("sucesso", "Concordância Alcançada!");
+    acertos++;
+    digitarTexto("Maravilhoso! A lógica OR (OU) funcionou!", 20);
+    digitarTexto("Ao reconhecer que **pelo menos uma** das vontades era verdadeira,", 20);
+    digitarTexto("SHADE viu um caminho para a união. Vocês se uniram!", 20);
+    digitarTexto("ÁREA e SHADE agora trabalham juntas. Que final inspirador!", 20);
+} else {
+    exibirMensagem("falha", "SHADE rejeita! A união falhou.");
+    digitarTexto("SHADE não aceitou. A lógica OR (OU) precisava que pelo menos uma condição fosse verdadeira.", 20);
+    digitarTexto("Sem concordância, a nave permanece dividida, o que pode ser catastrófico.", 20);
+}
+mostrarAcertosAtuais(acertos, totalDesafios);
+esperarEnter(input);
 
 
 
