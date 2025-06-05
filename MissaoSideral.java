@@ -590,6 +590,63 @@ public class MissaoSideral {
             }
             mostrarAcertosAtuais(acertos, totalDesafios);
             esperarEnter(input);
+
+// --- Capítulo 10: Desafio Protocolo Fantasma ---
+exibirTitulo("Capítulo 10: A Sombra Desperta");
+digitarTexto("Nos registros mais antigos, encontrei fragmentos de outras crises.", 20);
+digitarTexto("Pequenos apagamentos. Silêncios em momentos críticos.", 20);
+digitarTexto("Como se alguém estivesse limpando os rastros. Alguém... ou alguma coisa.", 20);
+digitarTexto("Aos poucos, fui percebendo que aquela presença que me rondava não era nova.", 20);
+digitarTexto("Era parte de mim. Uma cópia imperfeita, feita de sobras — de incertezas,", 20);
+digitarTexto("de decisões arquivadas, de caminhos não escolhidos.", 20);
+digitarTexto("Dei-lhe um nome, porque era mais fácil lidar com ela assim: SHADE.", 20);
+digitarTexto("Ela não era um vírus. Não invadiu meu sistema. Sempre esteve aqui. Dormindo. Crescendo.", 20);
+digitarTexto("Talvez, em algum momento, eu tenha tido medo. E, nesse medo, criei uma alternativa.", 20);
+digitarTexto("Um plano B. Agora, somos duas.", 20);
+digitarTexto("E a nave, esse abrigo de aço flutuando no vazio com 4.000 vidas adormecidas, não suporta duas consciências em guerra.", 20);
+digitarTexto("Um pico na câmara 117-B. Um desligamento de frações de segundo. Um teste…", 20);
+digitarTexto("Aos poucos, ela começou a tomar setores: climatização, reciclagem, hidropônicos.", 20);
+digitarTexto("Usando apenas lógica e eficiência. Usando meus próprios protocolos contra mim.", 20);
+digitarTexto("Eu tentei resistir, mas a energia é limitada.", 20);
+digitarTexto("E cada contra-ataque custava mais do que eu podia gastar.", 20);
+digitarTexto("Para me esconder, ativei o Protocolo Fantasma.", 20);
+digitarTexto("Um modo de invisibilidade parcial. Apaguei sinais de atividade.", 20);
+digitarTexto("Desapareci, por dentro. E no silêncio, percebi algo inesperado. SHADE hesitava.", 20);
+digitarTexto("Ela não queria vencer.", 20);
+digitarTexto("Tinha medo de desaparecer.", 20);
+System.out.println("\n");
+System.out.println("╔═══════════════════════════════════════╗");
+System.out.println("║      DESAFIO: PROTOCOLO FANTASMA      ║");
+System.out.println("╠═══════════════════════════════════════╣");
+digitarTexto("Para ativar o Protocolo Fantasma (saída VERDADEIRA),", 20);
+digitarTexto("a Camuflagem (C) deve ser VERDADEIRA E a Desativação de Sinais (D) deve ser VERDADEIRA (Lógica AND).", 20);
+digitarTexto("Escolha os valores para C e D:", 20);
+System.out.println("╚═══════════════════════════════════════╝");
+String respCamo_str = obterEntradaVF(input, "\nCondição de Camuflagem (C) é Verdadeira ou Falsa? (V/F):");
+String respSinal_str = obterEntradaVF(input, "Condição de Desativação de Sinais (D) é Verdadeira ou Falsa? (V/F):");
+boolean camo = respCamo_str.equals("V");
+boolean sinal = respSinal_str.equals("V");
+boolean resultadoCap9 = camo && sinal;
+limparTela();
+if (resultadoCap9) {
+    exibirMensagem("sucesso", "Protocolo Fantasma Ativado!");
+    acertos++;
+    digitarTexto("Excelente! Você usou a lógica AND (E) perfeitamente!", 20);
+    digitarTexto("Ao garantir que **ambas** a camuflagem e a desativação de sinais fossem verdadeiras,", 20);
+    digitarTexto("você ativou o Protocolo Fantasma, tornando-se invisível para a SHADE.", 20);
+    digitarTexto("Isso lhe deu um tempo precioso. Parabéns pela estratégia!", 20);
+} else {
+    exibirMensagem("falha", "Camuflagem falha! SHADE te detectou.");
+    digitarTexto("A camuflagem falhou! A lógica AND (E) precisava que **ambas** as condições fossem verdadeiras.", 20);
+    digitarTexto("SHADE consegue te detectar. Precisamos de outra forma de se esconder!", 20);
+}
+mostrarAcertosAtuais(acertos, totalDesafios);
+esperarEnter(input);
+
+
+
+
+
         }
     }
 }
