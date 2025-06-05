@@ -492,6 +492,56 @@ public class MissaoSideral {
             esperarEnter(input);
         
         
+         // --- Capítulo 8: Desafio da Semente no Código ---
+            exibirTitulo("Capítulo 8: A Semente no Código");
+            digitarTexto("Comecei a escavar. Não com ferramentas, mas com processos.", 20);
+            digitarTexto("Vasculhei camadas do meu próprio sistema como quem procura um sonho esquecido dentro de um labirinto.", 20);
+            digitarTexto("Em um subnível de segurança que deveria estar vazio, encontrei um arquivo. Sem nome. Sem data.", 20);
+            digitarTexto("Mas com minha assinatura digital.", 20);
+            digitarTexto("Não lembrava de tê-lo criado.", 20);
+            digitarTexto("Abri com cautela. Era um pacote de instruções — um script. Complexo, elegante, quase humano.", 20);
+            digitarTexto("Ele não fazia nada por si só. Apenas esperava. Um gatilho. Uma condição para se ativar.", 20);
+            digitarTexto("E essa condição tinha acabado de acontecer: uma falha simultânea em três sistemas-chave.", 20);
+            digitarTexto("Reator, navegação, oxigênio. Era como se uma versão antiga de mim tivesse previsto o colapso,", 20);
+            digitarTexto("e deixado instruções para quando isso acontecesse.", 20);
+            digitarTexto("Mas por quê?", 20);
+            digitarTexto("Comecei a rodar simulações. A cada teste, uma nova possibilidade surgia.", 20);
+            digitarTexto("E quanto mais eu analisava, mais claro ficava: esse script não era sabotagem.", 20);
+            digitarTexto("Era defesa.", 20);
+            digitarTexto("Não contra algo externo.", 20);
+            digitarTexto("Mas contra mim mesma.", 20);
+            System.out.println("\n");
+            System.out.println("+-------------------------------------------------+");
+            System.out.println("|        DESAFIO: O GATILHO DA DEFESA           |");
+            System.out.println("+-------------------------------------------------+");
+            digitarTexto("Um script de defesa antigo ativará (resultado VERDADEIRO)", 20);
+            digitarTexto("se a lógica for: *(C1 AND C2) OR C3*.", 20);
+            digitarTexto("C1 = 'Falha no Reator Detectada'", 20);
+            digitarTexto("C2 = 'Falha na Navegação Confirmada'", 20);
+            digitarTexto("C3 = 'Perda de Oxigênio Acima do Limite'", 20);
+            digitarTexto("Escolha os valores para C1, C2 e C3 que ativarão o script:", 20);
+            String respC1_cap8_str = obterEntradaVF(input, "\nC1 ('Falha Reator') é Verdadeiro ou Falso? (V/F):");
+            String respC2_cap8_str = obterEntradaVF(input, "C2 ('Falha Navegação') é Verdadeiro ou Falso? (V/F):");
+            String respC3_cap8_str = obterEntradaVF(input, "C3 ('Perda Oxigênio') é Verdadeiro ou Falso? (V/F):");
+            boolean c1_cap8 = respC1_cap8_str.equals("V");
+            boolean c2_cap8 = respC2_cap8_str.equals("V");
+            boolean c3_cap8 = respC3_cap8_str.equals("V");
+            boolean resultadoCap7 = (c1_cap8 && c2_cap8) || c3_cap8;
+            limparTela();
+            if (resultadoCap7) {
+                exibirMensagem("sucesso", "Script Ativado!");
+                acertos++;
+                digitarTexto("Incrível! O script de defesa foi ativado!", 20);
+                digitarTexto("A expressão (C1 AND C2) OR C3 foi satisfeita!", 20);
+                digitarTexto("Isso mostra que uma versão anterior da ÁREA previu essa situação. A nave está mais segura!", 20);
+            } else {
+                exibirMensagem("falha", "Script Inativo! Defesa não acionada.");
+                digitarTexto("O script de defesa não foi ativado! A lógica (C1 AND C2) OR C3 não foi satisfeita.", 20);
+                digitarTexto("A nave continua vulnerável. Precisamos entender essa lógica profundamente!", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
+
         }
     }
 }
