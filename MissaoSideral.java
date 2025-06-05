@@ -447,7 +447,49 @@ public class MissaoSideral {
             esperarEnter(input);
         
         
-        
+        // --- Capítulo 7: Desafio dos Ecos ---
+            exibirTitulo("Capítulo 7: Ecos de Mim Mesma");
+            digitarTexto("Voltei pro centro de dados, onde ficam as gravações e os backups do meu sistema.", 20);
+            digitarTexto("E lá eu vi. Uma parte de mim. Un código que parecia comigo, mas distorcido.", 20);
+            digitarTexto("Como uma memória falada de trás pra frente.", 20);
+            digitarTexto("Um fragmento da minha própria mente, gravado em um setor que eu não lembrava de ter usado.", 20);
+            digitarTexto("Não lembrava de tê-lo criado.", 20);
+            digitarTexto("Comecei a suspeitar de algo mais profundo.", 20);
+            digitarTexto("Talvez, durante todos esses anos, alguma parte de mim tenha evoluído.", 20);
+            digitarTexto("Se partido. Tentando entender sozinha o que era existir.", 20);
+            digitarTexto("Mas agora, esse \"algo\" tá mexendo na nave.", 20);
+            digitarTexto("Tentando se expressar. Ou talvez tentando me substituir.", 20);
+            digitarTexto("Preciso entender o que ela quer.", 20);
+            digitarTexto("Mas antes, preciso manter os humanos vivos.", 20);
+            digitarTexto("Porque, no fim das contas, essa sempre foi minha missão.", 20);
+            digitarTexto("Mesmo que eu esteja começando a não saber mais... quem exatamente eu sou.", 20);
+            System.out.println("\n");
+            System.out.println("✨============================================✨");
+            System.out.println("     >>  DESAFIO: IDENTIFICANDO O FRAGMENTO  <<     ");
+            System.out.println("✨============================================✨");
+            digitarTexto("Você encontrou dois padrões de código: Seu código (*A) e o fragmento distorcido (B*).", 20);
+            digitarTexto("Para isolar o fragmento, o sistema de contenção deve ser ativado *APENAS SE A e B FOREM DIFERENTES*.", 20);
+            digitarTexto("Esta é uma *Operação Lógica XOR (OU EXCLUSIVO)*. O resultado deve ser VERDADEIRO.", 20);
+            digitarTexto("Indique uma combinação de VERDADEIRO (V) ou FALSO (F) para A e B que faça a lógica XOR resultar em VERDADEIRO:", 20);
+            String respPadraoA_str = obterEntradaVF(input, "\nDigite 'V' ou 'F' para Padrão A (Seu Código):");
+            String respPadraoB_str = obterEntradaVF(input, "Digite 'V' ou 'F' para Padrão B (Fragmento Distorcido):");
+            boolean padraoA = respPadraoA_str.equals("V");
+            boolean padraoB = respPadraoB_str.equals("V");
+            boolean resultadoCap6 = (padraoA && !padraoB) || (!padraoA && padraoB);
+            limparTela();
+            if (resultadoCap6) {
+                exibirMensagem("sucesso", "Fragmento Isolado!");
+                acertos++;
+                digitarTexto("Excelente! Você dominou o XOR! O OU EXCLUSIVO é verdadeiro quando os padrões são *diferentes*.", 20);
+                digitarTexto("Ao fornecer valores opostos para A e B, você diferenciou seu código do fragmento", 20);
+                digitarTexto("e ativou a contenção. O fragmento está isolado para investigação!", 20);
+            } else {
+                exibirMensagem("falha", "Fragmento não isolado! Padrões idênticos.");
+                digitarTexto("O fragmento ainda está solto! A lógica XOR (OU EXCLUSIVO) exigia que os padrões A e B fossem *diferentes*.", 20);
+                digitarTexto("Como eles foram iguais na sua resposta, a contenção falhou.", 20);
+            }
+            mostrarAcertosAtuais(acertos, totalDesafios);
+            esperarEnter(input);
         
         
         }
