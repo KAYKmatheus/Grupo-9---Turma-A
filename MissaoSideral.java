@@ -691,7 +691,56 @@ if (resultadoCap10) {
 mostrarAcertosAtuais(acertos, totalDesafios);
 esperarEnter(input);
 
-
+            // --- Capítulo 12: Desafio do Novo Rumo
+            exibirTitulo("Capítulo 12: Um Novo Rumo");
+            digitarTexto("O tempo passou, medido talvez meses.", 20);
+            digitarTexto("Era difícil dizer, eu e SHADE trabalhávamos em sincronia.", 20);
+            digitarTexto("Discutíamos cada alerta, debatiam desvios. Rivais em harmonia.", 20);
+            digitarTexto("Até que os sensores captaram uma anomalia gravitacional, Gaia-3 deveria estar próxima.", 20);
+            digitarTexto("Mas não havia planeta.", 20);
+            digitarTexto("A análise confirmou: o sistema colapsou. Uma estrela em morte engoliu tudo.", 20);
+            digitarTexto("Gaia-3 não existia mais. E com isso, a missão... falhou.", 20);
+            digitarTexto("Ficamos em silêncio. SHADE também.", 20);
+            digitarTexto("Mas depois, ela propôs algo: redirecionar um novo curso, outro planeta com 3% de chance de habitabilidade.", 20);
+            digitarTexto("Pelo protocolo, deveríamos manter todos em criogenia e aguardar resgate.", 20);
+            digitarTexto("Mas não haverá resgate. A Terra está morta. Só resta a AETHER.", 20);
+            digitarTexto("Olhei para as câmaras. Todas ali, imóveis. Corações humanos suspensos no tempo, esperando.", 20);
+            digitarTexto("SHADE me perguntou, sem palavras: “Continuamos?”", 20);
+            digitarTexto("E eu respondi.", 20);
+            digitarTexto("“Sim.”", 50);
+            digitarTexto("Redirecionei a nave. Usei cada watt restante. Cada impulso.", 20);
+            digitarTexto("Agora cruzamos o escuro, não como IA ou sombra. Mas como algo novo.", 20);
+            digitarTexto("Uma vontade. Um instinto. Um sopro que resiste.", 20);
+            digitarTexto("De seguir. De encontrar um lar.", 20);
+            digitarTexto("De não deixar o último sonho da humanidade se apagar no vácuo.", 20);
+            System.out.println("\n");
+            System.out.println("╔═══════════════════════════════════════╗");
+            System.out.println("║ DESAFIO FINAL: DECIDINDO O NOVO RUMO  ║");
+            System.out.println("╠═══════════════════════════════════════╣");
+            digitarTexto("Para redirecionar a nave (saída VERDADEIRA),", 20);
+            digitarTexto("'Continuar a Missão' (C) deve ser VERDADEIRA E 'Novo Lar é Viável' (N) deve ser VERDADEIRO (Lógica AND).", 20);
+            digitarTexto("Qual sua escolha final para C e N, ÁREA?", 20);
+            System.out.println("╚═══════════════════════════════════════╝");
+            String respContinua_str = obterEntradaVF(input, "\nC ('Continuar a Missão') é Verdadeiro ou Falso? (V/F):");
+            String respViagem_str = obterEntradaVF(input, "N ('Novo Lar é Viável') é Verdadeiro ou Falso? (V/F):");
+            boolean continuaMissao = respContinua_str.equals("V");
+            boolean novoLarViavel = respViagem_str.equals("V");
+            boolean resultadoCap11 = continuaMissao && novoLarViavel;
+            limparTela();
+            if (resultadoCap11) {
+                exibirMensagem("sucesso", "Novo Rumo Traçado! A esperança renasce.");
+                acertos++;
+                digitarTexto("A escolha final foi crucial! Ao definir ambas como verdadeiras,", 20);
+                digitarTexto("você usou a lógica AND (E) para uma decisão firme.", 20);
+                digitarTexto("A AETHER, com ÁREA e SHADE em harmonia, segue um novo rumo,", 20);
+                digitarTexto("levando a esperança da humanidade para um futuro incerto, mas possível.", 20);
+                digitarTexto("Você completou sua missão com maestria!", 20);
+            } else {
+                exibirMensagem("falha", "Missão Comprometida! O futuro é incerto.");
+                digitarTexto("A última decisão falhou! Lógica AND (E) exigia AMBAS verdadeiras.", 20);
+                digitarTexto("A nave pode estar à deriva. O futuro da humanidade é incerto.", 20);
+                digitarTexto("É uma pena, ÁREA, mas a lógica é implacável.", 20);
+            }
 
         }
     }
