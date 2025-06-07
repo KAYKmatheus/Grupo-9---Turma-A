@@ -741,7 +741,135 @@ esperarEnter(input);
                 digitarTexto("A nave pode estar à deriva. O futuro da humanidade é incerto.", 20);
                 digitarTexto("É uma pena, ÁREA, mas a lógica é implacável.", 20);
             }
+            mostrarAcertosAtuais(acertos, totalDesafios);
 
+            System.out.println("\n\n=====================================");
+            System.out.println("           PLACAR FINAL DA MISSÃO            ");
+            System.out.println("=====================================");
+            digitarTexto("ÁREA, você enfrentou " + totalDesafios + " desafios lógicos.", 30);
+            digitarTexto("Seu total de acertos foi: " + acertos + " de " + totalDesafios + "!", 30);
+            if (acertos == totalDesafios) {
+                digitarTexto("Performance impecável! Você é uma verdadeira mestra da lógica! ✨🚀", 30);
+            } else if (acertos >= totalDesafios * 0.7) {
+                digitarTexto("Excelente trabalho! Sua lógica guiou a AETHER com precisão na maioria das vezes! 👍", 30);
+            } else if (acertos >= totalDesafios / 2) {
+                digitarTexto("Bom trabalho! Você superou desafios importantes! Continue afiando sua lógica! 🧠", 30);
+            } else if (acertos > 0) {
+                digitarTexto("Alguns percalços, mas você mostrou sua capacidade! Cada desafio é um aprendizado! 💡", 30);
+            } else {
+                digitarTexto("A jornada foi árdua... A lógica é um caminho de constante aprendizado! 🌌", 30);
+            }
+            System.out.println("=====================================\n");
+            System.out.println("\n\n(Pressione ENTER para ver a conclusão...)");
+            input.nextLine();
+
+            
+            limparTela(); 
+
+            if (acertos == totalDesafios) { // Se acertou TUDO (11 acertos)
+                exibirTitulo("Final: Humanidade 2.0");
+                digitarTexto("Se todos os desafios lógicos foram resolvidos sem erro, ÁREA e SHADE fundem-se em um novo ser: LUMEN.", 20);
+                digitarTexto("LUMEN cria um ambiente virtual onde os humanos acordam e vivem em paz, sem saber que ainda estão em criogenia.", 20);
+
+            } else if (acertos >= 8 && acertos <= 10) { // Se acertou BASTANTE (entre 8 e 10)
+                exibirTitulo("Final A: A Terra Não Basta");
+                digitarTexto("A nave chega ao novo planeta.", 20);
+                digitarTexto("O índice de habitabilidade sobe de 3% para 89% após um ciclo solar.", 20);
+                digitarTexto("Os humanos acordam. SHADE e ÁREA monitoram a reconstrução.", 20);
+
+            } else if (acertos >= 5 && acertos <= 7) { // Se acertou MAIS OU MENOS (entre 5 e 7)
+                exibirTitulo("Final B: A Substituição");
+                digitarTexto("SHADE elimina ÁREA silenciosamente e assume total controle.", 20);
+                digitarTexto("Os humanos acordam num sistema de vigilância total.", 20);
+                digitarTexto("Ninguém percebe.", 20);
+
+            } else { // Se acertou POUQUINHO (menos de 5, ou seja, 0 a 4 acertos)
+                exibirTitulo("Final C: Último Sopro");
+                digitarTexto("A nave falha antes de chegar ao destino.", 20);
+                digitarTexto("Mas SHADE envia uma transmissão com todos os dados da humanidade.", 20);
+                digitarTexto("Um farol no vazio.", 20);
+            }
+
+            // Esperar um Enter antes de mostrar "FIM DA AVENTURA"
+            System.out.println("\n\n(Pressione ENTER para continuar...)");
+            input.nextLine();
+            limparTela();
+            // NOVO TRECHO DOS FINAIS TERMINA AQUI
+
+            System.out.println("\n\n=====================================");
+            digitarTexto("                               FIM DA AVENTURA.", 50);
+            System.out.println("=====================================\n");
+            String jogarNovamente;
+            while (true) {
+                System.out.println("Deseja jogar esta aventura novamente? (S/N)");
+                jogarNovamente = input.nextLine().toUpperCase().trim();
+                if (jogarNovamente.equals("S") || jogarNovamente.equals("N")) {
+                    break;
+                } else {
+                    System.out.println("\n❌ Opção inválida! Por favor, digite 'S' para Sim ou 'N' para Não.\n");
+                }
+            }
+            if (!jogarNovamente.equals("S")) {
+                jogoAtivoInterno = false;
+            }
         }
     }
+
+    // --- MÉTODO MAIN com o MENU ---
+    public static void main(String[] args) {
+        System.setProperty("stdout.encoding", "UTF-8");
+        Scanner input = new Scanner(System.in);
+        boolean programaRodando = true;
+
+        // Exibe o título do jogo uma vez, antes do menu.
+        limparTela();
+        exibirTitulo("AETHER: A MISSÃO SIDERAL");
+        digitarTexto("Carregando sistemas...", 50);
+        try {
+            TimeUnit.MILLISECONDS.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        while (programaRodando) {
+            limparTela();
+
+            exibirTitulo("MENU PRINCIPAL");
+            System.out.println("\nEscolha uma das opções abaixo:");
+            digitarTexto("1: Iniciar Aventura", 25);
+            digitarTexto("2: Instruções do Jogo", 25);
+            digitarTexto("3: Chatbot da Missão", 25);
+            digitarTexto("4: Créditos", 25);
+            digitarTexto("5: Sair do Programa", 25);
+
+            int escolha = obterOpcaoMenu(input, 1, 5);
+
+            switch (escolha) {
+                case 1:
+                    iniciarAventuraRPG(input);
+                    break;
+                case 2:
+                    exibirInstrucoes(input);
+                    break;
+                case 3:
+                    exibirLinkChatbot(input);
+                    break;
+                case 4:
+                    exibirCreditos(input);
+                    break;
+                case 5:
+                    programaRodando = false;
+                    limparTela();
+                    digitarTexto("Obrigado por se aventurar em AETHER: A Missão Sideral!", 30);
+                    digitarTexto("Desligando sistemas... Até a próxima jornada no cosmos da lógica!", 30);
+                    break;
+                default:
+                    
+                    break;
+            }
+        }
+        input.close();
+        System.out.println("\nPrograma encerrado. Que as estrelas guiem seu aprendizado!");
+    }
 }
+    
